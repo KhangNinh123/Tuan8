@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Regex Example</title>
+</head>
+<body>
+	<h1>Email Addresses</h1>
+	<p>Here are some email addresses:</p>
+	<ul id="email-list">
+		<li>example1@gmail.com</li>
+		<li>example2@yahoo.com</li>
+		<li>example3@hotmail.com</li>
+	</ul>
+
+	<script>
+		// Create a regular expression to match email addresses
+		const emailRegex = /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/gi;
+
+		// Get the list of email addresses
+		const emailList = document.getElementById('email-list');
+
+		// Loop through each email address and check if it matches the regex
+		emailList.querySelectorAll('li').forEach(li => {
+			if (li.textContent.match(emailRegex)) {
+				// If it matches, highlight the email address
+				li.style.backgroundColor = 'yellow';
+			}
+		});
+	</script>
+</body>
+</html>
